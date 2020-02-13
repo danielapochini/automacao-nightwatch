@@ -1,4 +1,13 @@
 module.exports = {
+
+    before: (browser) => {
+        browser.resizeWindow(1920,1080)
+    },
+
+    after: (browser) => {
+        browser.end();
+    },
+
     'senha incorreta': (browser) => {
         let alert = '.alert-danger'
         browser
@@ -42,6 +51,5 @@ module.exports = {
             .click('.login-button')
             .waitForElementVisible(alert, 3000)
             .assert.containsText(alert, 'Opps. Cadê a senha?')
-            .end();
     }
 }
