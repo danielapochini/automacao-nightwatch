@@ -5,13 +5,8 @@ module.exports = {
 
         browser.resizeWindow(1920, 1080)
 
-        login
-            .navigate()
-            .waitForElementVisible('@form', 3000)
-            .setValue('@emailInput', 'zumbi@dospalmares.com.br')
-            .setValue('@passInput', 'pwd123')
-            .click('@loginButton')
-
+        login.with('zumbi@dospalmares.com.br', 'pwd123')
+        
         sidebar
             .waitForElementVisible('@userInfo', 3000)
             .assert.containsText('@userInfo', 'Quilombo')
