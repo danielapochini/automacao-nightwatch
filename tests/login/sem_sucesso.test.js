@@ -1,13 +1,4 @@
 module.exports = {
-
-    before: (browser) => {
-        browser.resizeWindow(1920,1080)
-    },
-
-    after: (browser) => {
-        browser.end();
-    },
-
     'senha incorreta': (browser) => {
         let login = browser.page.login()
         login
