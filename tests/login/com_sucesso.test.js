@@ -5,8 +5,6 @@ module.exports = {
 
         login.with('zumbi@dospalmares.com.br', 'pwd123')
         
-        sidebar
-            .waitForElementVisible('@userInfo', 3000)
-            .assert.containsText('@userInfo', 'Quilombo')
+        sidebar.expectLoggedUser('Quilombo')
     }
 }
